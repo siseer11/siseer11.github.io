@@ -56,13 +56,42 @@ function scrolling(e){
             document.querySelector('li.active').classList.remove('active');
             document.querySelector('.'+el.dataset['for']).classList.add('active');
             if(!filled && idx==1){
-                document.querySelector('ul.skill-chart').dataset.filled = 'true';
+                console.log('here');
+                fillSkill();
                 filled = true;
             }
-            
-            
         }
     })
+}
+
+/***************************************
+ * FUNCTION THAT FILL THE SKILL CHARTS *
+ ***************************************/
+function fillSkill(){
+    
+    let liSkill = document.querySelectorAll('ul.skill-chart li');
+    liSkill = Array.prototype.slice.call(liSkill).map(el=>{
+        let fillChart = el.querySelector('.fill');
+        let textFill = el.querySelector('.how-much');
+        let toThis   = Number(fillChart.dataset.much);
+        return [fillChart,textFill,toThis,0];
+    })
+    let fillInterval = window.setInterval(()=>{
+        liSkill.forEach((el,idx)=>{
+            if(el[3]==el[2]){
+                if(liSkill.length==1){
+                    window.clearInterval(fillInterval)
+                }else{
+                    liSkill.splice(idx,1);
+                }
+            }else{
+                el[3] +=2;
+                el[1].innerText = el[3] + '%';
+                el[0].style.flexBasis = el[3] + '%';
+
+            }
+        })
+    },80)
 }
 
 
