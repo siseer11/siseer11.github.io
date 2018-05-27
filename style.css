@@ -5,9 +5,9 @@
     list-style: none;
 }
 .max{
-    max-width: 1000px;
+    max-width: 1100px;
     margin:0 auto;
-    padding: 0 10px;
+    padding: 0 15px;
 }
 .title-underline{
     position: relative;
@@ -28,7 +28,18 @@
     display: flex;
     flex-direction: column;
 }
+.title h2{
+    transform: translate(0 , -50px);
+    opacity: 0;
+    animation: comeIn .8s 1s cubic-bezier(0, 0, 0.52, 1.44) forwards;
+}
 
+@keyframes comeIn{
+    to{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
 .top li.active {
     color: #f39c12;
 }
@@ -229,8 +240,14 @@ ul.nav-bar{
 /*************************
            ABOUT        
 **************************/
+about .line {
+    display: none;
+}
 .about-wrapper{
     color : #2c3e50;
+}
+.skills-wrapper {
+    margin-top: 50px;
 }
 div.about {
     
@@ -241,7 +258,27 @@ div.about {
     height: 800px;
     background: #ecf0f1;
 }
-
+.skills-wrapper h3 {
+    font-family: serif;
+    color: #2c3e50;
+    font-style: italic;
+    font-family: sans-serif;
+    font-size: 15px;
+    position: relative;
+    margin-bottom: 11px;
+    /* background: #2c3e50; */
+}
+.skills-wrapper a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+svg {
+    width: 100%;
+    max-height: 40px;
+}
 .info .image {
     width: 200px;
     height: 200px;
@@ -300,7 +337,15 @@ ul.skill-chart {
     display: grid;
     grid-gap: 10px;
     grid-auto-rows: 20px;
-    margin-top: 50px;
+}
+.skills-wrapper h3:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: #2c3e50;
 }
 .skill-chart li .language {
     position: absolute;
@@ -392,6 +437,7 @@ div.contact{
 /******************
     MEDIA-QUERIEs
 *******************/
+
 @media screen and (min-width : 600px){
     /******************
             TOP 
@@ -483,7 +529,60 @@ div.contact{
 }
 
 
+@media screen and (min-width : 900px){
+    /*****************
+        ABOUT
+    *******************/
+    .about .max {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        grid-gap: 20px;
+        padding: 0 30px;
+        grid-row-gap: 100px;
+    }
+    ul.skill-chart {
+        grid-auto-rows: 32px;
+    }
+    .skill-chart li .language{
+        font-size: 12px;
+    }
+    .about .line {
+        background: linear-gradient(#ff000000,#00000042,#ff000000);
+    }
+    .section-title {
+        grid-column: 1/-1;
+    }
+    .about-wrapper{
+        margin: 0;
+    }
+    .section-title {
+        margin: 0;
+    }
+    .skills-wrapper{
+        margin: 0;
+        align-self: center;
+    }
+    .info h3{
+        font-size: 22px;
+    }
+    .skills-wrapper h3 {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    .skills-wrapper h3:after {
+        height: 2px;
+        width: 80px;
+    }
+    .info {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        align-items: center;
+        text-align: left;
+        text-align: center;
+        padding: 0 20px;
+    }
 
+}
 
 
 
