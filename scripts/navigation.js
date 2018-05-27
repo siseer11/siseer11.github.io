@@ -58,3 +58,13 @@ function scrolling(e){
 }
 
 
+/*************************
+     Burger Click
+***************************/
+let burger = document.querySelector('.nav-burger');
+burger.addEventListener('click',burgerClicked);
+function burgerClicked(e){
+
+    let expanded = this.parentElement.dataset.expanded;
+    this.parentElement.dataset.expanded = expanded=='true'?'false':'true';
+}
