@@ -393,14 +393,62 @@ div.contact{
     MEDIA-QUERIEs
 *******************/
 @media screen and (min-width : 600px){
+    /******************
+            TOP 
+    *******************/
+    .top .title h2{
+        font-size: 40px;
+    }
+    .nav-burger{
+        display: none;
+    }
+    .top li.active:after {
+        width: 100%;
+        left: 0;
+    }
+    ul.nav-bar{
+        padding: 0;
+        transform: translateY(0);
+        width: auto;
+        border:none;
+    }
+    .nav{
+        display: flex;
+    }
+    .nav ul li{
+        padding: 10px 30px;
+        width: auto;
+        float: left;
+    }
+    .top ul.nav-bar {
+        margin: 30px auto;
+        justify-content: space-around;
+        position: relative;
+        background: #141720b8;
+        box-shadow: inset 0px 2px 2px #00000091, 0px 1px 1px #ffffff26;
+        display: flex;
+        display: inline-block;
+    }
+    .top li.active {
+        background: #0000001a;
+    }
+    .top li:not(:last-child):before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background: linear-gradient(to left,#00000026,#ffffff26);
+        height: 50%;
+        top: 25%;
+        right: -1px;
+    }
+    /******************
+            ABOUT 
+    *******************/
     ul.skill-chart{
         grid-auto-rows: 30px;
     }
     .info .image{
         margin: 0;
-    }
-    .top .title h2{
-        font-size: 40px;
     }
     .skills-wrapper {
         max-width: 600px;
@@ -493,39 +541,5 @@ div.contact{
 
 
 /*
-.top li {
-    list-style: none;
-    padding: 10px 30px;
-    float: left;
-    position: relative;
-    cursor: pointer;
-    transition : .2s linear all;
-}
-.top ul.nav-bar {
-    background: white;
-    z-index: 200;
-    margin: 30px auto;
-    justify-content: space-around;
-    position: relative;
-    background: #00000059;
-    background: #14172061;
-    color: white;
-    font-family: sans-serif;
-    box-shadow: inset 0px 2px 2px #00000091, 0px 1px 1px #ffffff26;
-    display: flex;
-    display: inline-block;
-}
-.top li.active {
-    background: #0000001a;
-    color: #f39c12;
-}
-.top li:not(:last-child):before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: linear-gradient(to left,#00000026,#ffffff26);
-    height: 50%;
-    top: 25%;
-    right: -1px;
-}
+
 */
