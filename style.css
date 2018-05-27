@@ -7,6 +7,11 @@
 .max{
     max-width: 1000px;
     margin:0 auto;
+    padding: 0 10px;
+}
+.title-underline{
+    position: relative;
+    text-align: center;
 }
 /****************************
             TOP
@@ -135,7 +140,7 @@
     padding-bottom: 100px;
 }
 .top .title h2 {
-    font-size : 25px;
+    font-size : 45px;
     font-weight: 100;
     text-align: center;
     font-family: 'Dancing Script';
@@ -148,26 +153,17 @@
     color : #2c3e50;
 }
 div.about {
+    
+    color: #444649;
     padding: 100px 0;
     position: relative;
     width: 100%;
     height: 800px;
     background: #ecf0f1;
 }
-.about-wrapper h1 {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 50px;
-}
 
-.info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 800px;
-}
+
+
 .info .image {
     width: 200px;
     height: 200px;
@@ -177,13 +173,33 @@ div.about {
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background: url(images/cov.jpg);
+    background-size: cover;
+    margin: 50px 0 25px;
+    background-position: 30% 50%;
+    box-shadow: inset 1px 3px 4px #0000000d;
+}
+.info {
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 15px;
+    text-align: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
 }
 .info p {
     display: inline;
-    box-sizing: border-box;
-    padding: 50px 20px;
     color: #2c3e50;
-    text-align: center;
+    margin: 5px 0;
+}
+.info h3 {
+    font-weight: 100;
+    font-style: italic;
+    line-height: 18px;
+    margin-bottom: 20px;
 }
 .about .cut {
     position: absolute;
@@ -194,10 +210,65 @@ div.about {
     height: 100px;
     z-index: 200;
 }
-
-
-
-
+ul.skill-chart li {
+    display: flex;
+    background: #85888d;
+    color: white;
+    width: 100%;
+    position: relative;
+}
+ul.skill-chart {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: 20px;
+    margin-top: 50px;
+}
+.skill-chart li .language {
+    position: absolute;
+    background: #141720;
+    text-align: center;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100px;}
+.skill-chart .fill {
+    height: 100%;
+    transition: .5s cubic-bezier(0, 0, 0.6, 1.46) all;
+    flex-basis: 10%;
+    flex-basis: 50%;
+    background: #f39c12f5;
+}
+.section-title {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title-underline {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+.title-underline:after {
+    content: '';
+    width: 70%;
+    left: 15%;
+    height: 4px;
+    position: absolute;
+    top: 115%;
+    background: #444649e6;
+    /* left: 0; */
+}
+.how-much {
+    position: absolute;
+    right: 10px;
+    font-size: 10px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
 
 div.projects{
     width: 100%;
@@ -219,17 +290,61 @@ div.contact{
     height: 100px;
     z-index: 200;
 }
-
-
+.fill[data-much='40'] {
+    flex-basis: 40%;
+}
+.fill[data-much='50'] {
+    flex-basis: 50%;
+}
+.fill[data-much='60'] {
+    flex-basis: 60%;
+}
+.fill[data-much='70'] {
+    flex-basis: 70%;
+}
+.fill[data-much='80'] {
+    flex-basis: 80%;
+}
+.fill[data-much='90'] {
+    flex-basis: 90%;
+}
 
 
 /******************
     MEDIA-QUERIEs
 *******************/
-@media screen and (max-width){
-    
+@media screen and (min-width : 600px){
+    ul.skill-chart{
+        grid-auto-rows: 30px;
+    }
+    .info .image{
+        margin: 0;
+    }
+    .skills-wrapper {
+        max-width: 600px;
+        margin: 80px auto 0; 
+    }
+    .info{
+        grid-template-columns: 200px 1fr;
+        grid-gap: 20px;
+        align-items: center;
+        text-align: left
+    }
+    .info p {
+        display: block;
+    }
+    .about-wrapper {
+        margin-top: 100px;
+    }
+    .skills-wrapper {
+        margin-top: 80px;
+    }
 }
-
+@media screen and (min-width: 700px){
+    .about .max{
+        padding: 0 50px;
+    }
+}
 
 
 

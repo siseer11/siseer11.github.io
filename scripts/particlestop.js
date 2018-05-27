@@ -78,14 +78,17 @@ let secondCanvas = document.getElementById('second');
 //CANVAS INIT
 let [projectWidth,projectHeight] = [projectDiv.offsetWidth,projectDiv.offsetHeight];
 let particles = [];
-let nParticles = 70;
-let maxSpeed = .2;
+let nParticles;
+
+let maxSpeed = .1;
 
 secondCanvas.width = projectWidth;
 secondCanvas.height = projectHeight;
 
 function initCanvasSize(){
     particles = [];
+    nParticles = Math.floor(80 * projectWidth/1200);
+    console.log(nParticles);
     [projectWidth,projectHeight] = [projectDiv.offsetWidth,projectDiv.offsetHeight];
     [topDivWidth,topDivHeight] = [top.innerWidth,top.innerHeight];
     canvasParticlesOp.height = topDivHeight;

@@ -7,6 +7,16 @@
 </head>
 <body>
     <div data-for='home' class='top'>
+        <div class='nav'>
+            <div class='nav-burger'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         <ul class='nav-bar'>        
             <li class='home active'>Home</li>
             <li class='about'>About</li>
@@ -22,21 +32,28 @@
     </div>
     <div data-for='about' class='about'>
         <div class='max'>
+            <div class='section-title'>
+                <h1 class='title-underline'>ABOUT</h1>
+            </div>
             <div class='about-wrapper'>
-                <h1>ABOUT</h1>
                 <div class='info'>
                     <div class='image'></div>
-                    <p><span>Hello! My name is Dragos, a passionate front-end developer, based in Stockholm.</span></br>
-                        I love challanges and learning something new every day. That's why this fit me so well. Curently working on my front-end skills but looking forward learning back-end too in the future.<br> 
-                        All started with a passion for design at first. Then starting slowly to learn about the web i found out that it is something
-                        that i would love to do so i start learning, for 2 years alredy. 
-                    </p>
+                    <div class='txt'>
+                        <h3>I'm a passionate front-end developer, based in Stockholm.</h3>
+                        <p>I love challanges and learning something new every day. My bigest passion are coding and riding BMX, i love both because you are always on the run for your next skill, you never stop learning.</p>
+                        <p>Curently i'm improving my front-end skills but i'm looking up to learn more about back-end too, things like NodeJS, MongoDB are in my plan.</p>
+                    </div>
                 </div>
             </div>
             <div class='skills-wrapper'>
-               
-                
-                
+               <ul class='skill-chart'>
+                    <li><div class='language'>HTML</div><div data-much='80' class='fill'></div><div class='how-much'>80%</div></li>
+                    <li><div class='language'>CSS</div><div data-much='80' class='fill'></div><div class='how-much'>80%</div></li>
+                    <li><div class='language'>Javascript</div><div data-much='70' class='fill'></div><div class='how-much'>70%</div></li>
+                    <li><div class='language'>React</div><div data-much='40' class='fill'></div><div class='how-much'>40%</div></li>
+                    <li><div class='language'>Photoshop</div><div data-much='60' class='fill'></div><div class='how-much'>60%</div></li>
+                    <li><div class='language'>UI Design</div><div data-much='50' class='fill'></div><div class='how-much'>50%</div></li>
+               </ul>
             </div>
         </div>
         <div class='cut'></div>
@@ -44,8 +61,7 @@
     <div data-for='projects' class='projects'>
             <canvas id='second'></canvas>
         <div class='max'>
-            
-
+            <h1 class='bar-down'>PROJECTS</h1>
         </div>
     </div>
     <div data-for='contact' class='contact'>
