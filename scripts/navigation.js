@@ -1,6 +1,8 @@
 /******************************
  * CLICK LI TO GO TO THAT DIV
  ******************************/
+//flag for the skills
+let filled = false;
 let divs = [document.querySelector('div.top'),document.querySelector('div.about'),document.querySelector('div.projects'),document.querySelector('div.contact')]
 let lis = document.querySelectorAll('.top ul li');
 lis.forEach((el,idx)=>{
@@ -46,12 +48,18 @@ function scrolling(e){
         navUl.classList.remove('sticky');
     }
     let scrollBottom = window.innerHeight+window.scrollY;
-    divs.forEach(el=>{
+    divs.forEach((el,idx)=>{
+        
         let isScrolledPass = scrollBottom > el.offsetTop+el.offsetHeight;
         if(!isScrolledPass && scrollBottom >= el.offsetTop+(el.offsetHeight*0.3)){ //wgen 30% of it is shown
             if(document.querySelector('.'+el.dataset['for']).classList.contains('active')){return}
             document.querySelector('li.active').classList.remove('active');
             document.querySelector('.'+el.dataset['for']).classList.add('active');
+            if(!filled && idx==1){
+                document.querySelector('ul.skill-chart').dataset.filled = 'true';
+                filled = true;
+            }
+            
             
         }
     })
