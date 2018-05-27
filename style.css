@@ -72,7 +72,7 @@
 }
 .top .cut {
     position: absolute;
-    top: calc(100% - 100px);
+    top: calc(100% - 99px);
     left: 0;
     background: linear-gradient(to bottom right,#ff000000 50%,#ff000000,#ecf0f1 50%, #ecf0f1);
     width: 100%;
@@ -282,7 +282,7 @@ div.about {
 }
 .about .cut {
     position: absolute;
-    top: calc(100%);
+    top: calc(100% - 1px);
     left: 0;
     background: linear-gradient(to bottom right,#ecf0f1 50%,#ecf0f1,#ecf0f100 50%, #ecf0f100);
     width: 100%;
@@ -362,7 +362,7 @@ div.contact{
 }
 .contact .cut {
     position: absolute;
-    top: calc(100%);
+    top: calc(100% - 1px);
     left: 0;
     background: linear-gradient(to bottom right,#ecf0f1 50%,#ecf0f1,#ecf0f100 50%, #ecf0f100);
     width: 100%;
@@ -427,7 +427,13 @@ div.contact{
         background: #141720b8;
         box-shadow: inset 0px 2px 2px #00000091, 0px 1px 1px #ffffff26;
         display: flex;
-        display: inline-block;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .top ul.nav-bar.sticky{
+        background: #141720cc;
+        width: 100%;
+        margin: 0;
     }
     .top li.active {
         background: #0000001a;
