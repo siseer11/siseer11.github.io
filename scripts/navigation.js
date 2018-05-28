@@ -10,7 +10,7 @@ lis.forEach((el,idx)=>{
         if(window.scrollY != divs[idx].offsetTop){
             let pase = (divs[idx].offsetTop - window.scrollY)/200;
             window.scrollTo({
-                top: divs[idx].offsetTop - 40,
+                top: divs[idx].offsetTop,
                 behavior: "smooth"
             });
             
@@ -47,11 +47,13 @@ function scrolling(e){
     }else if(window.scrollY < 30 && navUl.classList.contains('sticky')){
         navUl.classList.remove('sticky');
     }
-    let scrollBottom = window.innerHeight+window.scrollY;
+    let scrollTopScreenVal = window.scrollY;
+    let scrollBottom = window.innerHeight+scrollTopScreenVal;
     divs.forEach((el,idx)=>{
-        
-        let isScrolledPass = scrollBottom > el.offsetTop+el.offsetHeight;
-        if(!isScrolledPass && scrollBottom >= el.offsetTop+(el.offsetHeight*0.5)){ //wgen 50% of it is shown
+        let elementTop = el.offsetTop;
+        let elementHeight = el.offsetHeight;
+        let isScrolledPass = scrollBottom > elementTop+elementHeight;
+        if(!isScrolledPass && (scrollBottom >= elementTop+(elementHeight*0.5) || scrollTopScreenVal >= elementTop )){ //wgen 50% of it is shown
             if(document.querySelector('.'+el.dataset['for']).classList.contains('active')){return}
             document.querySelector('li.active').classList.remove('active');
             document.querySelector('.'+el.dataset['for']).classList.add('active');

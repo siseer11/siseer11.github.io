@@ -569,12 +569,12 @@ div.contact .cut:nth-child(2) {
 }
 div.contact svg{
     fill:white;
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
 }
 div.contact h1.title-underline {
     justify-self: center;
-    margin: 50px 0;
+    margin: 50px 0 150px;
 }
 div.contact h1.title-underline:after{
     background: white;
@@ -596,6 +596,7 @@ div.contact .left > div {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 div.contact .max {
     display: grid;
@@ -628,7 +629,7 @@ div.contact .right {
 .right .icon:hover{
     background: #ee9b17;
 }
-.right svg{
+div.contact .right svg{
     width: 24px;
     height: 24px;
     transition: .2s all linear;
@@ -643,7 +644,32 @@ div.contact .right {
     color: #cacaca;
     color:#cacaca;
     padding: 10px 0;
-    text-align: center;}
+    text-align: center;
+    font-size: 11px;
+}
+div.contact .max p {
+    font-family: monospace;
+}
+p.find {
+    position: relative;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.left .icon:after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background: #ee9b17;
+}
+div.contact .line{
+    height: 1px;
+    background: linear-gradient(to left,#ff000000,#ee9b1794,#ff000000);
+}
 /******************
     MEDIA-QUERIEs
 *******************/
@@ -739,6 +765,42 @@ div.contact .right {
         grid-gap: 20px;
         grid-auto-rows: 40vw;
     }
+    /******************
+         CONTACT
+    *******************/
+    div.contact .max{
+        padding: 50px 0 150px;
+        grid-row-gap: 50px;
+        grid-template-columns: 1fr 3px 1fr;
+    }
+    div.contact h1.title-underline {
+        grid-column: 1 / -1;
+        margin: 50px 0 100px;
+    }
+    div.contact .line{
+        width: 1px;
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(to top,#ff000000,#ee9b1794,#ff000000);
+        align-self: center;
+        justify-self: center;
+    }
+    div.contact .right {
+        grid-template-columns: repeat(3,auto);
+        max-width: 300px;
+    }
+    div.contact .left {
+        align-items: flex-start;
+    }
+    p.find:after {
+        content: '';
+        width: 25px;
+        height: 1px;
+        background: #ee9b17;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+    }
 }
 @media screen and (min-width: 700px){
     .about .max{
@@ -748,7 +810,51 @@ div.contact .right {
         padding: 90px 40px 150px;
     }
 }
-
+@media screen and (min-width: 800px){
+    div.contact .right {
+        grid-template-columns: repeat(5,1fr);
+    }
+    div.contact .max{
+        grid-template-columns: 1fr;
+        grid-row-gap: 25px;
+        justify-items: center;
+    }
+    div.contact .line {
+        background : linear-gradient(to left,#ff000000,#ee9b1794,#ff000000);
+        width: 300px;
+        height: 1px;
+        margin: 10px 0;
+    }
+    p.find:after{
+        display: none;
+    }
+    p.find{
+        grid-column: 1 / -1;
+        
+        text-align: center;
+    }
+    div.contact .left > div {
+        grid-gap: 20px;
+    }
+    div.contact .left {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 50px;
+        justify-items: center;
+    }
+    div.contact .max {
+        padding: 80px 0 100px;
+    }
+    div.contact .cut:nth-child(2) {
+        left: calc(100% - 200px);
+        top: -80px;
+        width: 200px;
+        height: 80px;
+        z-index: 2;
+    }
+    div.projects {
+        padding-bottom: 120px;
+    }
+}
 
 @media screen and (min-width : 900px){
     /*****************
