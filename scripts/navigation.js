@@ -51,7 +51,7 @@ function scrolling(e){
     divs.forEach((el,idx)=>{
         
         let isScrolledPass = scrollBottom > el.offsetTop+el.offsetHeight;
-        if(!isScrolledPass && scrollBottom >= el.offsetTop+(el.offsetHeight*0.3)){ //wgen 30% of it is shown
+        if(!isScrolledPass && scrollBottom >= el.offsetTop+(el.offsetHeight*0.5)){ //wgen 50% of it is shown
             if(document.querySelector('.'+el.dataset['for']).classList.contains('active')){return}
             document.querySelector('li.active').classList.remove('active');
             document.querySelector('.'+el.dataset['for']).classList.add('active');
@@ -63,7 +63,7 @@ function scrolling(e){
         }
     })
 }
-
+scrolling();
 /***************************************
  * FUNCTION THAT FILL THE SKILL CHARTS *
  ***************************************/

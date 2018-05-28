@@ -87,7 +87,7 @@ secondCanvas.height = projectHeight;
 
 function initCanvasSize(){
     particles = [];
-    nParticles = Math.floor(80 * projectWidth/1200);
+    nParticles = Math.floor(80 * projectWidth/1200) + Math.floor(100*projectHeight/2000);
     console.log(nParticles);
     [projectWidth,projectHeight] = [projectDiv.offsetWidth,projectDiv.offsetHeight];
     [topDivWidth,topDivHeight] = [top.innerWidth,top.innerHeight];
